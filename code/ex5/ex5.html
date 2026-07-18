@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Courses Marathon Map</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+<body>
+
+    <h1>Courses Marathon Map</h1>
+    <hr>
+    <label for="course-select">Choisissez une course :</label>
+    <select id="course-select">
+        <option value="0">--Sélectionner une course--</option>
+        <option value="1">Marathon de Paris</option>
+        <option value="2">Marathon de New York</option>
+        <option value="3">Marathon du Mont-Blanc</option>
+        <option value="4">Marathon des Alpes-Maritimes (Nice-Cannes)</option>
+        <option value="5">Marathon de Bordeaux</option>
+    </select>
+    <hr>
+
+    <div id="map"></div>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7Y32T_PJHZxYcK3BJYJFNwSl6cuvLXpo&callback=initMap"
+        defer></script>
+    <script>
+
+        let map, currentMarkers = [];
+
+        // Initialisation de la carte avec un point de départ neutre
+        function initMap() {
+            var options = {
+                center: { lat: 48.8566, lng: 2.3522 },  // Paris
+                zoom: 5,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById("map"), options);
+
+            // Attacher un écouteur d'événements pour le changement dans le select
+            document.getElementById('course-select').addEventListener('change', function () {
+                let selectedCourseId = this.value;
+                if (selectedCourseId != 0) {
+                    fetchCourseData(selectedCourseId);
+                }
+            });
+        }
+
+        // Fonction pour récupérer les données de la course sélectionnée
+        function fetchCourseData(courseId) {
+            fetch("courses.json")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    let selectedCourse = data.find(course => course.id == courseId);
+                    if (selectedCourse) {
+                        displayCourseOnMap(selectedCourse);
+                    } else {
+                        console.error('Course not found');
+                    }
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+
+        // Fonction pour afficher la course sélectionnée sur la carte
+        function displayCourseOnMap(course) {
+            // Vider les marqueurs précédents
+            clearMarkers();
+
+            // Centrer la carte sur le premier marqueur de la course
+            if (course.markers.length > 0) {
+                let firstMarker = course.markers[0];
+                map.setCenter(new google.maps.LatLng(firstMarker.lat, firstMarker.lng));
+                map.setZoom(13);
+            }
+
+            // Ajouter les marqueurs et afficher le contenu
+            course.markers.forEach(markerData => {
+                let position = { lat: markerData.lat, lng: markerData.lng };
+                let marker = new google.maps.Marker({
+                    position: position,
+                    map: map
+                });
+
+                // Ajouter un infoWindow pour afficher le contenu lors du clic sur le marqueur
+                let infoWindow = new google.maps.InfoWindow({
+                    content: markerData.content
+                });
+
+                marker.addListener('click', function () {
+                    infoWindow.open(map, marker);
+                });
+
+                // Ajouter le marqueur à la liste de marqueurs courants pour les nettoyer plus tard
+                currentMarkers.push(marker);
+            });
+
+            // Tracer les lignes reliant les marqueurs (optionnel)
+            const flightPath = new google.maps.Polyline({
+                path: course.markers.map(m => ({ lat: m.lat, lng: m.lng })),
+                geodesic: true,
+                strokeColor: "#FF0000",
+                strokeOpacity: 1.0,
+                strokeWeight: 2,
+            });
+            flightPath.setMap(map);
+        }
+
+        // Fonction pour supprimer les marqueurs existants
+        function clearMarkers() {
+            currentMarkers.forEach(marker => {
+                marker.setMap(null);
+            });
+            currentMarkers = [];
+        }
+
+    </script>
+
+</body>
+
+</html>

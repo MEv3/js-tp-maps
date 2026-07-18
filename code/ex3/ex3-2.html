@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>JRostand stade reperes</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+
+<body>
+
+    <h1>JRostand Reperes Stade</h1>
+    <hr>
+    <div id="map">...</div>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7Y32T_PJHZxYcK3BJYJFNwSl6cuvLXpo&callback=loadDoc&v=weekly" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        var markers;
+
+        // when page is loaded, start fetch call
+        function loadDoc() {
+            fetch("markersJrostand.json")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(
+                    /*
+                    TODO
+                    */
+                   )
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+
+        function initMap() {
+            var options = {
+                center: new google.maps.LatLng(48.95930033308523, 2.5477890651742516),
+                zoom: 15,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };          
+
+            // TODO positionner les marqueurs sur la carte
+        }
+
+    </script>
+
+</body>
+
+</html>

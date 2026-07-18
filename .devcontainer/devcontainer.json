@@ -1,0 +1,43 @@
+{
+    "name": "PHP Docker Dev",
+    
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "xdebug.php-debug"
+            ],
+            "settings": {
+                "remote.autoForwardPorts": true
+            }
+        }
+    },
+    
+    "forwardPorts": [8090, 8081, 3306, 9003],
+    
+    "portsAttributes": {
+        "8090": {
+            "label": "Application Web",
+            "onAutoForward": "openBrowser",
+            "protocol": "http"
+        },
+        "8081": {
+            "label": "phpMyAdmin",
+            "onAutoForward": "notify",
+            "protocol": "http"
+        },
+        "3306": {
+            "label": "MySQL",
+            "onAutoForward": "silent"
+        },
+        "9003": {
+            "label": "Xdebug",
+            "onAutoForward": "silent"
+        }
+    }
+}

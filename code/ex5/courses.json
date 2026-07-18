@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "name": "Marathon de Paris",
+    "markers": [
+      { "lat": 48.8606, "lng": 2.3376, "content": "Arc de Triomphe" }, 
+      { "lat": 48.8662, "lng": 2.3119, "content": "Place de la Concorde" },
+      { "lat": 48.8566, "lng": 2.3522, "content": "Cathédrale Notre-Dame" },
+      { "lat": 48.8462, "lng": 2.3464, "content": "Pont Neuf" },
+      { "lat": 48.8455, "lng": 2.3634, "content": "Parc Rives de Seine" },
+      { "lat": 48.8529, "lng": 2.4030, "content": "Château de Vincennes" },
+      { "lat": 48.8575, "lng": 2.4241, "content": "Bois de Vincennes" },
+      { "lat": 48.8611, "lng": 2.3945, "content": "Quai de Bercy" },
+      { "lat": 48.8519, "lng": 2.3673, "content": "Place de la Bastille" },
+      { "lat": 48.8584, "lng": 2.2945, "content": "Tour Eiffel" },
+      { "lat": 48.8625, "lng": 2.2876, "content": "Parc du Champ de Mars" },
+      { "lat": 48.8700, "lng": 2.2931, "content": "Arrivée: Arc de Triomphe" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Marathon de New York",
+    "markers": [
+      { "lat": 40.6019, "lng": -74.0635, "content": "Staten Island" },  
+      { "lat": 40.6247, "lng": -74.0258, "content": "Verrazzano-Narrows Bridge" },
+      { "lat": 40.6453, "lng": -74.0100, "content": "Bay Ridge" },
+      { "lat": 40.6937, "lng": -73.9904, "content": "Brooklyn Heights" },
+      { "lat": 40.7102, "lng": -73.9581, "content": "Williamsburg Bridge" },
+      { "lat": 40.7574, "lng": -73.9392, "content": "Long Island City, Queens" },
+      { "lat": 40.7808, "lng": -73.9524, "content": "Central Park" },
+      { "lat": 40.8004, "lng": -73.9580, "content": "Harlem" },
+      { "lat": 40.7636, "lng": -73.9780, "content": "59th Street" },
+      { "lat": 40.7820, "lng": -73.9712, "content": "Columbus Circle" },
+      { "lat": 40.7851, "lng": -73.9683, "content": "Arrivée: Central Park" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Marathon du Mont-Blanc",
+    "markers": [
+      { "lat": 45.9237, "lng": 6.8694, "content": "Chamonix" },  
+      { "lat": 45.9267, "lng": 6.8731, "content": "Planpraz" },
+      { "lat": 45.9493, "lng": 6.8691, "content": "La Flégère" },
+      { "lat": 45.9613, "lng": 6.8831, "content": "Lac des Chéserys" },
+      { "lat": 45.9822, "lng": 6.8975, "content": "Col des Montets" },
+      { "lat": 46.0031, "lng": 6.9101, "content": "Vallorcine" },
+      { "lat": 45.9975, "lng": 6.9234, "content": "Refuge de Loriaz" },
+      { "lat": 45.9874, "lng": 6.8703, "content": "Col des Posettes" },
+      { "lat": 45.9765, "lng": 6.8754, "content": "Trélechamp" },
+      { "lat": 45.9417, "lng": 6.8699, "content": "Arrivée: Chamonix" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Marathon des Alpes-Maritimes (Nice-Cannes)",
+    "markers": [
+      { "lat": 43.6952, "lng": 7.2703, "content": "Promenade des Anglais, Nice" }, 
+      { "lat": 43.6678, "lng": 7.2569, "content": "Parc Phoenix" },
+      { "lat": 43.6574, "lng": 7.2172, "content": "Cap 3000, Saint-Laurent-du-Var" },
+      { "lat": 43.6439, "lng": 7.1226, "content": "Marina Baie des Anges, Villeneuve-Loubet" },
+      { "lat": 43.6175, "lng": 7.0822, "content": "Antibes" },
+      { "lat": 43.5615, "lng": 7.0653, "content": "Juan-les-Pins" },
+      { "lat": 43.5579, "lng": 7.0491, "content": "Golfe-Juan" },
+      { "lat": 43.5528, "lng": 7.0174, "content": "Pointe Croisette, Cannes" },
+      { "lat": 43.5499, "lng": 7.0157, "content": "Arrivée: Boulevard de la Croisette, Cannes" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Marathon de Bordeaux",
+    "markers": [
+      { "lat": 44.8378, "lng": -0.5792, "content": "Place de la Bourse" },  
+      { "lat": 44.8392, "lng": -0.5719, "content": "Pont de Pierre" },
+      { "lat": 44.8416, "lng": -0.5376, "content": "Avenue Thiers" },
+      { "lat": 44.8431, "lng": -0.4941, "content": "Parc aux Angéliques" },
+      { "lat": 44.8456, "lng": -0.4945, "content": "Pont Chaban-Delmas" },
+      { "lat": 44.8643, "lng": -0.5434, "content": "Quai des Chartrons" },
+      { "lat": 44.8617, "lng": -0.5647, "content": "Place des Quinconces" },
+      { "lat": 44.8423, "lng": -0.5776, "content": "Rue Sainte-Catherine" },
+      { "lat": 44.8373, "lng": -0.5799, "content": "Arrivée: Place de la Bourse" }
+    ]
+  }
+]

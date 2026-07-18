@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Open Browser",
+            "type": "shell",
+            "windows": {
+                "command": "powershell",
+                "args": [
+                    "-NoProfile",
+                    "-Command",
+                    "Start-Sleep -Seconds 3; Start-Process 'http://127.0.0.1:8090'"
+                ]
+            },
+            "linux": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "sleep 3 && if [ -d /workspaces ]; then echo; echo Codespace detected; echo Click PORTS tab and open port 8090; echo; else xdg-open http://127.0.0.1:8090 2>/dev/null || echo Open http://127.0.0.1:8090; fi &"
+                ]
+            },
+            "osx": {
+                "command": "bash",
+                "args": [
+                    "-c",
+                    "(sleep 3 && open http://127.0.0.1:8090) &"
+                ]
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": false,
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
