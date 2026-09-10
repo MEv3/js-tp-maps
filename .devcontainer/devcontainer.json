@@ -1,12 +1,12 @@
 {
     "name": "PHP Docker Dev",
-    
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    
+
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:2": {}
     },
-    
+
     "customizations": {
         "vscode": {
             "extensions": [
@@ -17,9 +17,9 @@
             }
         }
     },
-    
+
     "forwardPorts": [8090, 8081, 3306, 9003],
-    
+
     "portsAttributes": {
         "8090": {
             "label": "Application Web",
