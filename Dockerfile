@@ -5,7 +5,7 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli
 
 # Installer Xdebug
 RUN apk add --no-cache $PHPIZE_DEPS linux-headers \
-    && pecl install xdebug-3.3.1 \
+    && pecl install xdebug \
     && docker-php-ext-enable xdebug
 
 # Configuration Xdebug de base (sans client_host qui sera défini dynamiquement)
