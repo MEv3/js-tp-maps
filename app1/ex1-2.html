@@ -228,9 +228,21 @@
 	document.getElementById("Button1").addEventListener('click',readTab);
 
 	function readTab(){
-       //TODO
-       
-	}
+            let tab  = JSON.parse(CDs);
+            for (let numero in tab){
+
+                console.log("CD["+numero + "]=");
+                let objet = tab [numero];
+
+                for (let cle in objet) {
+
+                
+                     console.log(cle + ":" + objet[cle]);  
+                }
+            } 
+
+               
+      	}     
 
 </script>
 
